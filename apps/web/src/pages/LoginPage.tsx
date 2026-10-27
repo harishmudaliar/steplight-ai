@@ -7,8 +7,8 @@ export const LoginPage: React.FC = () => {
   const location = useLocation();
   const { login, loginDemo, error, clearError } = useAuth();
 
-  const [email, setEmail] = useState('demo@steplight.ai');
-  const [password, setPassword] = useState('gentlestep123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
@@ -89,7 +89,7 @@ export const LoginPage: React.FC = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="demo@steplight.ai"
+                placeholder="you@example.com"
                 className="w-full h-11 pl-10 pr-3 rounded-xl bg-surface-container-low dark:bg-surface-container text-on-surface dark:text-inverse-on-surface placeholder-outline font-body-md text-body-md border border-surface-container-high/60 focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-inner"
               />
             </div>
@@ -114,7 +114,7 @@ export const LoginPage: React.FC = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 className="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-low dark:bg-surface-container text-on-surface dark:text-inverse-on-surface placeholder-outline font-body-md text-body-md border border-surface-container-high/60 focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-inner"
               />
               <button

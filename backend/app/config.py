@@ -23,7 +23,10 @@ class Settings:
     API_PREFIX: str = os.getenv("API_PREFIX", "/api")
 
     # Safe parsed list of CORS origins
-    _cors_raw: str = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
+    _cors_raw: str = os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173,app://steplight",
+    )
     CORS_ORIGINS: List[str] = [origin.strip() for origin in _cors_raw.split(",") if origin.strip()]
 
     # Brand identity & product promise

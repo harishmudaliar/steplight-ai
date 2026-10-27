@@ -30,6 +30,10 @@ interface AuthContextType {
 const ACCESS_TOKEN_KEY = 'steplight_access_token';
 const REFRESH_TOKEN_KEY = 'steplight_refresh_token';
 
+function isAuthenticationRejection(err: unknown): err is ApiError {
+  return err instanceof ApiError && err.status >= 400 && err.status < 500;
+}
+
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -102,7 +106,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           return;
         } catch (err: unknown) {
           if (isMounted) {
-            if (err instanceof ApiError && err.status < 500) setSession(null, null, null);
+            if (isAuthenticationRejection(err)) setSession(null, null, null);
             setIsLoading(false);
           }
           return;
@@ -121,7 +125,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           return;
         } catch (err: unknown) {
           if (isMounted) {
-            if (err instanceof ApiError && err.status < 500) {
+            if (isAuthenticationRejection(err)) {
               setSession(null, null, null);
             }
             setIsLoading(false);

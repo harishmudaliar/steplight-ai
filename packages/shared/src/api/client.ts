@@ -247,20 +247,34 @@ export class ApiClient {
     }
 
     this.refreshInFlight = (async () => {
-      const response = await this.fetchFn(`${this.baseUrl}/auth/refresh`, {
-        method: 'POST',
-        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({ refresh_token: this.storedRefreshToken }),
-      });
+      let response: Response;
+      try {
+        response = await this.fetchFn(`${this.baseUrl}/auth/refresh`, {
+          method: 'POST',
+          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ refresh_token: this.storedRefreshToken }),
+        });
+      } catch {
+        throw new ApiError('Unable to verify your session right now. Check your connection and try again.', 0);
+      }
       if (!response.ok) {
         if (response.status === 401 || response.status === 400) {
           this.token = null;
           this.storedRefreshToken = null;
           this.sessionExpiredHandler?.();
+          return null;
         }
-        return null;
+        throw new ApiError('Session refresh is temporarily unavailable. Please try again.', response.status);
       }
-      const payload = (await response.json()) as { access_token: string };
+      let payload: { access_token?: string };
+      try {
+        payload = (await response.json()) as { access_token?: string };
+      } catch {
+        throw new ApiError('Session refresh is temporarily unavailable. Please try again.', 502);
+      }
+      if (!payload.access_token) {
+        throw new ApiError('Session refresh is temporarily unavailable. Please try again.', 502);
+      }
       this.token = payload.access_token;
       return payload.access_token;
     })();

@@ -129,6 +129,34 @@ describe('ApiClient', () => {
     expect(tokens.accessToken).toBe('fake-jwt-token-12345');
     expect(tokens.user.displayName).toBe('Gentle Traveler');
     expect(client.getToken()).toBe('fake-jwt-token-12345');
+    expect(mockFetch).toHaveBeenCalledWith(
+      'http://localhost:8000/api/auth/login',
+      expect.objectContaining({
+        method: 'POST',
+        headers: expect.objectContaining({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify({ email: 'traveler@steplight.ai', password: 'gentlestep123' }),
+      })
+    );
+  });
+
+  it('keeps credential failures distinct from network failures', async () => {
+    const invalidCredentialsClient = new ApiClient({
+      baseUrl: 'http://localhost:8000/api',
+      fetchFn: vi.fn().mockResolvedValue({
+        ok: false,
+        status: 401,
+        json: async () => ({ detail: 'Invalid email or password.' }),
+      }) as unknown as typeof fetch,
+    });
+    await expect(invalidCredentialsClient.login({ email: 'person@example.test', password: 'wrong-password' }))
+      .rejects.toMatchObject({ status: 401, message: 'Invalid email or password.' });
+
+    const offlineClient = new ApiClient({
+      baseUrl: 'http://localhost:8000/api',
+      fetchFn: vi.fn().mockRejectedValue(new TypeError('Failed to fetch')) as unknown as typeof fetch,
+    });
+    await expect(offlineClient.login({ email: 'person@example.test', password: 'test-password' }))
+      .rejects.toMatchObject({ status: 0, message: 'Unable to connect right now. Check your connection and try again.' });
   });
 
   it('should inject Authorization Bearer header when token is set', async () => {
@@ -339,6 +367,44 @@ describe('ApiClient', () => {
     expect(fetchFn).toHaveBeenCalledTimes(3);
     expect(fetchFn.mock.calls[1][0]).toBe('http://localhost:8000/api/auth/refresh');
     expect(client.getToken()).toBe('new-access-token');
+  });
+
+  it('clears an invalid refresh session but preserves it during a network outage', async () => {
+    const unauthorized = {
+      ok: false,
+      status: 401,
+      json: async () => ({ detail: 'Expired access token' }),
+    };
+    const invalidRefreshClient = new ApiClient({
+      baseUrl: 'http://localhost:8000/api',
+      initialToken: 'expired-access-token',
+      initialRefreshToken: 'invalid-refresh-token',
+      fetchFn: vi.fn().mockResolvedValueOnce(unauthorized).mockResolvedValueOnce({
+        ok: false,
+        status: 401,
+        json: async () => ({ detail: 'Invalid refresh token' }),
+      }) as unknown as typeof fetch,
+    });
+    const expiredHandler = vi.fn();
+    invalidRefreshClient.setSessionExpiredHandler(expiredHandler);
+    await expect(invalidRefreshClient.getProfile()).rejects.toMatchObject({ status: 401 });
+    expect(invalidRefreshClient.getToken()).toBeNull();
+    expect(expiredHandler).toHaveBeenCalledTimes(1);
+
+    const offlineRefreshClient = new ApiClient({
+      baseUrl: 'http://localhost:8000/api',
+      initialToken: 'expired-access-token',
+      initialRefreshToken: 'still-valid-refresh-token',
+      fetchFn: vi.fn().mockResolvedValueOnce(unauthorized).mockRejectedValueOnce(new TypeError('Failed to fetch')) as unknown as typeof fetch,
+    });
+    const retainedHandler = vi.fn();
+    offlineRefreshClient.setSessionExpiredHandler(retainedHandler);
+    await expect(offlineRefreshClient.getProfile()).rejects.toMatchObject({
+      status: 0,
+      message: 'Unable to verify your session right now. Check your connection and try again.',
+    });
+    expect(offlineRefreshClient.getToken()).toBe('expired-access-token');
+    expect(retainedHandler).not.toHaveBeenCalled();
   });
 
   it('preserves conflict status for explicit stale-edit handling', async () => {

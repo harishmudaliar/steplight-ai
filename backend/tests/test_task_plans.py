@@ -118,6 +118,44 @@ def test_plan_retries_once_then_returns_valid_response():
         client.close()
 
 
+def test_truncated_gemini_output_is_retried_with_a_bounded_concise_correction():
+    calls = []
+
+    def handler(request):
+        body = json.loads(request.content)
+        calls.append(body)
+        if len(calls) == 1:
+            return httpx.Response(200, json={"candidates": [{
+                "finishReason": "MAX_TOKENS", "content": {"parts": [{"text": "{"}]}
+            }]})
+        return httpx.Response(200, json=provider(plan_payload("medium")))
+
+    client = GeminiClient(api_key="test-key", transport=httpx.MockTransport(handler), max_retries=0)
+    try:
+        result = generate_plan(client, goal="Write project report", notes="", capacity="medium",
+                               strategies=[], history=[])
+        assert len(result.steps) == 3
+        assert len(calls) == 2
+        retry_instruction = calls[1]["contents"][0]["parts"][-1]["text"]
+        assert "truncated_output" in retry_instruction
+        assert "Complete the full plan" in retry_instruction
+    finally:
+        client.close()
+
+
+def test_gemini_refusal_is_not_reported_as_invalid_plan():
+    client = GeminiClient(api_key="test-key", transport=httpx.MockTransport(
+        lambda request: httpx.Response(200, json={"candidates": [{
+            "finishReason": "SAFETY", "content": {"parts": []}
+        }]})), max_retries=0)
+    try:
+        with pytest.raises(GeminiProviderError, match="blocked_content"):
+            generate_plan(client, goal="Write project report", notes="", capacity="medium",
+                          strategies=[], history=[])
+    finally:
+        client.close()
+
+
 def test_mocked_gemini_response_is_persisted_through_plan_endpoint(client, monkeypatch):
     prompts = []
     payload = plan_payload("low")

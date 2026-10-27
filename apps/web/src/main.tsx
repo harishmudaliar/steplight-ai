@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-if (import.meta.env.PROD && 'serviceWorker' in navigator && window.location.protocol !== 'file:') {
+if (import.meta.env.PROD && 'serviceWorker' in navigator && window.location.protocol !== 'file:' && !('electronAPI' in window)) {
   const rendererScript = document.querySelector<HTMLScriptElement>('script[type="module"][src]');
   if (rendererScript) {
     const serviceWorkerUrl = new URL('../service-worker.js', rendererScript.src);

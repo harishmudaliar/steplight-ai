@@ -163,7 +163,12 @@ def generate_plan(client: GeminiClient, *, goal: str, notes: str, capacity: str,
             if not isinstance(candidates, list) or not candidates or not isinstance(candidates[0], dict):
                 raise ValueError("missing_candidate")
             candidate = candidates[0]
-            if candidate.get("finishReason") != "STOP":
+            finish_reason = candidate.get("finishReason")
+            if finish_reason in {"SAFETY", "BLOCKLIST", "PROHIBITED_CONTENT"}:
+                raise GeminiProviderError("blocked_content")
+            if finish_reason == "MAX_TOKENS":
+                raise ValueError("truncated_output")
+            if finish_reason != "STOP":
                 raise ValueError("incomplete_candidate")
             content = candidate.get("content")
             parts = content.get("parts") if isinstance(content, dict) else None
@@ -187,7 +192,8 @@ def generate_plan(client: GeminiClient, *, goal: str, notes: str, capacity: str,
             if isinstance(error, ValidationError):
                 reason = _validation_location(error)
             elif isinstance(error, ValueError) and str(error) in {
-                "malformed_json", "missing_candidate", "incomplete_candidate", "missing_parts", "empty_response_text"
+                "malformed_json", "missing_candidate", "incomplete_candidate", "truncated_output",
+                "missing_parts", "empty_response_text"
             }:
                 reason = str(error)
             elif stage == "plan_validation" and str(error) in {
@@ -214,6 +220,8 @@ def generate_plan(client: GeminiClient, *, goal: str, notes: str, capacity: str,
                 "Do not combine actions with and, then, a semicolon, or multiple sentences."
                 if capacity == "low" and mode != "cant" else ""
             )
+            if reason == "truncated_output":
+                correction += " Keep every required field, but use concise descriptions and omit optional research suggestions when none are useful. Complete the full plan within the output limit."
             body["contents"][0]["parts"].append({"text": "The previous response failed " + stage + " (" + reason + "). Return a complete JSON object with all required fields; follow the requested capacity limits, task context, uniqueness, ordering and plan mode." + correction})
     raise GeminiProviderError("invalid_plan")
 

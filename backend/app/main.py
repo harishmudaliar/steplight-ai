@@ -16,9 +16,17 @@ app = FastAPI(
 )
 
 # Explicit Development CORS setup
+development_origin_regex = (
+    r"^http://(?:localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$"
+    if settings.APP_ENV.lower() in ("development", "dev", "test")
+    else None
+)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
+    # Vite moves to the next port when 5173 is occupied. Restrict fallback
+    # origins to loopback development hosts; never enable this in production.
+    allow_origin_regex=development_origin_regex,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allow_headers=["*"],

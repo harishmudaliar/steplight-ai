@@ -84,4 +84,46 @@ describe.each(['browser', 'electron hash'] as const)('%s auth session', (mode) =
     expect(fetchMock.mock.calls.find(([url]) => String(url).endsWith('/auth/me'))?.[1]?.headers).toMatchObject({ Authorization: 'Bearer access' });
     view.unmount();
   });
+
+  it('clears an invalid saved session and returns to login when refresh is rejected', async () => {
+    localStorage.setItem('steplight_access_token', 'expired-access-token');
+    localStorage.setItem('steplight_refresh_token', 'revoked-refresh-token');
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input);
+      if (url.endsWith('/auth/me')) {
+        return { ok: false, status: 401, json: async () => ({ detail: 'Expired access token' }) } as Response;
+      }
+      if (url.endsWith('/auth/refresh')) {
+        return { ok: false, status: 401, json: async () => ({ detail: 'Refresh token revoked' }) } as Response;
+      }
+      throw new Error(`Unexpected request: ${url}`);
+    });
+
+    mount('/');
+    await screen.findByRole('button', { name: 'Sign In' });
+    expect(localStorage.getItem('steplight_access_token')).toBeNull();
+    expect(localStorage.getItem('steplight_refresh_token')).toBeNull();
+    expect(fetchMock.mock.calls.map(([url]) => String(url))).toEqual([
+      `${import.meta.env.VITE_API_BASE_URL}/auth/me`,
+      `${import.meta.env.VITE_API_BASE_URL}/auth/refresh`,
+    ]);
+  });
+
+  it('retains saved credentials when session restoration hits a network failure', async () => {
+    localStorage.setItem('steplight_access_token', 'expired-access-token');
+    localStorage.setItem('steplight_refresh_token', 'temporarily-unreachable-refresh-token');
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input);
+      if (url.endsWith('/auth/me')) {
+        return { ok: false, status: 401, json: async () => ({ detail: 'Expired access token' }) } as Response;
+      }
+      if (url.endsWith('/auth/refresh')) throw new TypeError('Failed to fetch');
+      throw new Error(`Unexpected request: ${url}`);
+    });
+
+    mount('/');
+    await screen.findByRole('button', { name: 'Sign In' });
+    expect(localStorage.getItem('steplight_access_token')).toBe('expired-access-token');
+    expect(localStorage.getItem('steplight_refresh_token')).toBe('temporarily-unreachable-refresh-token');
+  });
 });

@@ -4,12 +4,12 @@ import {
   Menu,
   Notification,
   ipcMain,
+  protocol,
   screen,
   shell,
 } from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';
-import { fileURLToPath } from 'url';
 
 interface WindowBounds {
   x?: number;
@@ -43,6 +43,19 @@ const MIN_WINDOW_SIZE = {
 const MIN_COMPACT_SIZE = { width: 360, height: 480 };
 const APP_NAME = process.env.DESKTOP_APP_NAME || 'Steplight AI';
 const STATE_FILE = 'desktop-state.json';
+const APP_SCHEME = 'app';
+const APP_HOST = 'steplight';
+
+protocol.registerSchemesAsPrivileged([{
+  scheme: APP_SCHEME,
+  privileges: {
+    standard: true,
+    secure: true,
+    supportFetchAPI: true,
+    corsEnabled: true,
+    stream: true,
+  },
+}]);
 
 if (!app.isPackaged) {
   const rootEnvPath = path.resolve(__dirname, '../../..', '.env');
@@ -74,10 +87,69 @@ function getDevServerUrl(): URL {
   return url;
 }
 
-const devServerUrl = !app.isPackaged ? getDevServerUrl() : null;
+const useDevServer = !app.isPackaged && process.env.DESKTOP_USE_DEV_SERVER === 'true';
+const devServerUrl = useDevServer ? getDevServerUrl() : null;
 const packagedRendererPath = path.resolve(process.resourcesPath, 'web', 'index.html');
 const developmentRendererPath = path.resolve(__dirname, '../../web/dist/index.html');
+const rendererRootPath = app.isPackaged
+  ? path.dirname(packagedRendererPath)
+  : path.dirname(developmentRendererPath);
 const statePath = () => path.join(app.getPath('userData'), STATE_FILE);
+
+const rendererMimeTypes: Record<string, string> = {
+  '.css': 'text/css; charset=utf-8',
+  '.html': 'text/html; charset=utf-8',
+  '.ico': 'image/x-icon',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.ttf': 'font/ttf',
+  '.webp': 'image/webp',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
+};
+
+async function serveRendererAsset(request: Request): Promise<Response> {
+  const url = new URL(request.url);
+  if (
+    url.hostname !== APP_HOST ||
+    url.port ||
+    url.username ||
+    url.password ||
+    (request.method !== 'GET' && request.method !== 'HEAD')
+  ) {
+    return new Response('Not found', { status: 404 });
+  }
+
+  let pathname: string;
+  try {
+    pathname = decodeURIComponent(url.pathname);
+  } catch {
+    return new Response('Invalid path', { status: 400 });
+  }
+
+  const rendererRoot = path.resolve(rendererRootPath);
+  const assetPath = path.resolve(rendererRoot, `.${pathname === '/' ? '/index.html' : pathname}`);
+  const relativePath = path.relative(rendererRoot, assetPath);
+  if (relativePath === '..' || relativePath.startsWith(`..${path.sep}`) || path.isAbsolute(relativePath)) {
+    return new Response('Forbidden', { status: 403 });
+  }
+
+  try {
+    const contents = await fs.promises.readFile(assetPath);
+    return new Response(request.method === 'HEAD' ? null : new Uint8Array(contents), {
+      headers: {
+        'Content-Type': rendererMimeTypes[path.extname(assetPath).toLowerCase()] || 'application/octet-stream',
+        'X-Content-Type-Options': 'nosniff',
+      },
+    });
+  } catch {
+    return new Response('Not found', { status: 404 });
+  }
+}
 
 let mainWindow: BrowserWindow | null = null;
 let desktopState: DesktopState = {
@@ -164,9 +236,8 @@ function getSafeBounds(bounds: WindowBounds): WindowBounds {
 function isAllowedAppUrl(rawUrl: string): boolean {
   try {
     const target = new URL(rawUrl);
-    if (target.protocol === 'file:') {
-      const allowedFilePath = app.isPackaged ? packagedRendererPath : developmentRendererPath;
-      return path.resolve(fileURLToPath(target)) === path.resolve(allowedFilePath);
+    if (target.protocol === `${APP_SCHEME}:`) {
+      return target.hostname === APP_HOST && !target.port && !target.username && !target.password;
     }
     return Boolean(devServerUrl && target.origin === devServerUrl.origin);
   } catch {
@@ -310,23 +381,17 @@ function createWindow(): void {
     if (!isAllowedAppUrl(url)) event.preventDefault();
   });
 
-  const rendererPath = app.isPackaged ? packagedRendererPath : developmentRendererPath;
-  if (app.isPackaged || !devServerUrl) {
-    if (!fs.existsSync(rendererPath)) {
-      console.error('Built renderer files not found at:', rendererPath);
-      return;
-    }
-    void mainWindow.loadFile(rendererPath).catch((error: unknown) => {
-      console.error('Could not load the packaged renderer.', error);
-    });
-  } else {
+  if (devServerUrl) {
     void mainWindow.loadURL(devServerUrl.toString()).catch((error: unknown) => {
       console.error('Could not load the local Vite renderer.', error);
-      if (fs.existsSync(developmentRendererPath)) {
-        void mainWindow?.loadFile(developmentRendererPath).catch((fallbackError: unknown) => {
-          console.error('Could not load the built development renderer.', fallbackError);
-        });
-      }
+    });
+  } else {
+    if (!fs.existsSync(path.join(rendererRootPath, 'index.html'))) {
+      console.error('Built renderer files are not available. Build the web workspace first.');
+      return;
+    }
+    void mainWindow.loadURL(`${APP_SCHEME}://${APP_HOST}/index.html`).catch((error: unknown) => {
+      console.error('Could not load the built desktop renderer.', error);
     });
   }
 
@@ -365,7 +430,8 @@ if (!gotTheLock) {
     mainWindow.focus();
   });
 
-  app.whenReady().then(() => {
+  app.whenReady().then(async () => {
+    await protocol.handle(APP_SCHEME, serveRendererAsset);
     desktopState = loadDesktopState();
     registerDesktopIpc();
     installApplicationMenu();

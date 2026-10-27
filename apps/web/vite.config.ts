@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
 
   const isDevelopment = mode !== 'production';
   const developmentPolicy = isDevelopment
-    ? ` ${new URL(apiBaseUrl).origin} ws://localhost:5173 ws://127.0.0.1:5173`
+    ? ` ${new URL(apiBaseUrl).origin} ws://localhost:* ws://127.0.0.1:*`
     : '';
   const contentSecurityPolicy = [
     "default-src 'self'",

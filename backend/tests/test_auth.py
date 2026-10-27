@@ -119,6 +119,13 @@ def test_login_nonexistent_user_generic_error(client):
     assert res.json()["detail"] == "Invalid email or password."
 
 
+@pytest.mark.parametrize("payload", [{"email": "missing-password@example.test"}, {"password": "missing-email"}, {}])
+def test_login_rejects_missing_credentials(client, payload):
+    response = client.post("/api/auth/login", json=payload)
+    assert response.status_code == 422
+    assert response.json()["detail"]
+
+
 def test_get_profile_me(client):
     reg = client.post(
         "/api/auth/register",
@@ -217,7 +224,7 @@ def test_token_expiration(client):
     assert "expired" in res.json()["detail"].lower()
 
 
-@pytest.mark.parametrize("origin", ["http://localhost:5173", "http://127.0.0.1:5173"])
+@pytest.mark.parametrize("origin", ["http://localhost:5173", "http://127.0.0.1:5173", "app://steplight"])
 def test_auth_cors_preflight(client, origin):
     response = client.options("/api/auth/register", headers={
         "Origin": origin,
@@ -226,3 +233,24 @@ def test_auth_cors_preflight(client, origin):
     })
     assert response.status_code == 200
     assert response.headers["access-control-allow-origin"] == origin
+
+
+@pytest.mark.parametrize("origin", ["http://localhost:5174", "http://127.0.0.1:5174"])
+def test_auth_cors_allows_vite_fallback_port(client, origin):
+    response = client.options("/api/auth/login", headers={
+        "Origin": origin,
+        "Access-Control-Request-Method": "POST",
+        "Access-Control-Request-Headers": "content-type",
+    })
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == origin
+
+
+def test_auth_cors_rejects_non_local_origins(client):
+    response = client.options("/api/auth/login", headers={
+        "Origin": "https://untrusted.example",
+        "Access-Control-Request-Method": "POST",
+        "Access-Control-Request-Headers": "content-type",
+    })
+    assert response.status_code == 400
+    assert "access-control-allow-origin" not in response.headers

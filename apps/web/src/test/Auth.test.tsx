@@ -97,6 +97,8 @@ describe('Steplight AI Phase 3 Frontend Authentication Integration Suite', () =>
     );
 
     const submitBtn = screen.getByRole('button', { name: /Sign In/i });
+    fireEvent.change(screen.getByLabelText(/Email Address/i), { target: { value: 'person@example.test' } });
+    fireEvent.change(screen.getByLabelText(/^Password/i), { target: { value: 'WrongPassword123!' } });
     fireEvent.click(submitBtn);
 
     await waitFor(() => {

@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "dev": "tsc && node scripts/launch.cjs",
+    "dev": "tsc && node scripts/dev.cjs",
     "start": "node scripts/launch.cjs",
     "dist:win": "electron-builder --win nsis"
   },
