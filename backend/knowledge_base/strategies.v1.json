@@ -1,0 +1,465 @@
+{
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "steplight_product_principles",
+      "title": "Steplight AI non-diagnostic task-initiation design principles",
+      "publisher": "Team OLYMPUS",
+      "reference": "docs/ARCHITECTURE.md and stitch_steplight_ai_ui_ux_system/steplight_ai/DESIGN.md",
+      "note": "Original product guidance: one optional next action, gentle capacity fit, no diagnosis or pressure."
+    },
+    {
+      "id": "fogg_behavior_model",
+      "title": "The Fogg Behavior Model",
+      "publisher": "Stanford Behavior Design Lab",
+      "reference": "https://behaviormodel.org/",
+      "note": "General behavior-design framing; entries use original wording and are not treatment advice."
+    },
+    {
+      "id": "implementation_intentions",
+      "title": "Implementation intentions: Strong effects of simple plans",
+      "publisher": "American Psychologist, 54(7), 493-503",
+      "reference": "https://doi.org/10.1037/0003-066X.54.7.493",
+      "note": "Bibliographic source for simple if-then planning; no source text is reproduced."
+    },
+    {
+      "id": "cognitive_load_theory",
+      "title": "Cognitive load during problem solving: Effects on learning",
+      "publisher": "Cognitive Science, 12(2), 257-285",
+      "reference": "https://doi.org/10.1207/s15516709cog1202_4",
+      "note": "Bibliographic source for reducing unnecessary task complexity; no clinical claims are made."
+    }
+  ],
+  "strategies": [
+    {
+      "id": "open_one_material",
+      "name": "Open one relevant material",
+      "use_case": "Starting study, research, paperwork, or a project when several files or sources feel hard to approach.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Open the one document or resource most related to this task.",
+      "caution": "Opening is enough; do not require reading or finishing it now.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "One visible, optional first action."}, {"source_id": "fogg_behavior_model", "basis": "Reduce the effort needed to begin."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "write_first_sentence",
+      "name": "Write one rough sentence",
+      "use_case": "Beginning an essay, email, report, application, or blank-page writing task.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Write one rough sentence about what this piece needs to say.",
+      "caution": "A fragment or placeholder counts; editing is not required.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Make the first move small and non-perfectionistic."}, {"source_id": "cognitive_load_theory", "basis": "Limit simultaneous decisions at the start."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "name_next_physical_move",
+      "name": "Name a physical first move",
+      "use_case": "Tasks that feel vague, large, or difficult to translate into an immediate action.",
+      "capacity_fit": ["low", "medium", "high"],
+      "sample": "Name one physical action that could begin this task.",
+      "caution": "Choose an action, not a full plan or a judgment about progress.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Translate a broad intention into one tiny next action."}, {"source_id": "implementation_intentions", "basis": "Use concrete action wording."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "make_if_then_start",
+      "name": "Make a gentle if-then cue",
+      "use_case": "A task with a known place, time, or trigger but an uncertain start.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Finish the sentence: “When I am at my workspace, I can first…”",
+      "caution": "Keep the cue flexible; it is not a promise or deadline.",
+      "source_metadata": [{"source_id": "implementation_intentions", "basis": "Original if-then cue, adapted as optional planning."}, {"source_id": "steplight_product_principles", "basis": "Avoid pressure and preserve user choice."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "gather_one_tool",
+      "name": "Put one needed tool within reach",
+      "use_case": "Hands-on, creative, cooking, repair, or household work that requires a specific tool.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Place one tool needed for this task where you can see it.",
+      "caution": "Gather only one item; preparation can stop there.",
+      "source_metadata": [{"source_id": "fogg_behavior_model", "basis": "Make a first action easier to do."}, {"source_id": "steplight_product_principles", "basis": "One action is a complete stopping point."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "open_workspace",
+      "name": "Open the task workspace",
+      "use_case": "Starting computer, design, coding, or administrative work that has a familiar app or workspace.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Open the app or workspace used for this task.",
+      "caution": "No further work is expected after opening it.",
+      "source_metadata": [{"source_id": "fogg_behavior_model", "basis": "Reduce startup friction."}, {"source_id": "steplight_product_principles", "basis": "Keep the first move bounded."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "find_one_question",
+      "name": "Write the first question",
+      "use_case": "Research, troubleshooting, studying, or planning when the goal is not yet clear.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Write one question you would like this task to answer.",
+      "caution": "The question may be incomplete; answers can wait.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Narrow the immediate decision space."}, {"source_id": "steplight_product_principles", "basis": "Use a gentle, non-diagnostic prompt."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "read_one_heading",
+      "name": "Read one heading",
+      "use_case": "Approaching a long reading, study, policy, or technical document.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Read one heading in the material for this task.",
+      "caution": "There is no requirement to continue to the next section.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Present one small unit at a time."}, {"source_id": "steplight_product_principles", "basis": "Make stopping after one action acceptable."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "mark_one_item",
+      "name": "Mark one relevant item",
+      "use_case": "Reviewing notes, a checklist, research, or a document with several details.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Mark one line or item that looks relevant to the task.",
+      "caution": "Do not try to organize or annotate everything at once.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Offer one observable action."}, {"source_id": "cognitive_load_theory", "basis": "Limit the amount of material handled at once."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "make_three_labels",
+      "name": "Write three temporary labels",
+      "use_case": "Outlining a report, presentation, project, or study notes when some planning capacity is available.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Write up to three rough labels for parts of the task.",
+      "caution": "Labels are placeholders, not a commitment to complete every part.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Externalize a small amount of structure."}, {"source_id": "steplight_product_principles", "basis": "Keep planning proportionate to capacity."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "draft_one_bullet",
+      "name": "Draft one bullet",
+      "use_case": "Writing, meeting preparation, reports, or presentations when a single idea can get the work moving.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Add one rough bullet to the place where this task belongs.",
+      "caution": "A rough bullet is enough; do not expand it unless you choose to.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Single optional writing action."}, {"source_id": "fogg_behavior_model", "basis": "Make the response small and actionable."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "save_current_draft",
+      "name": "Save the current draft",
+      "use_case": "Writing, coding, design, or document work where preserving current progress is the next useful action.",
+      "capacity_fit": ["low", "medium", "high"],
+      "sample": "Save the current file once.",
+      "caution": "Saving does not mean the work is finished or ready to share.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Offer a useful, bounded action at any capacity."}, {"source_id": "fogg_behavior_model", "basis": "Make the desired action easy to complete."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "run_one_test",
+      "name": "Run one focused check",
+      "use_case": "Coding or technical work with a specific test, command, or expected behavior.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Run one test related to the part you just changed.",
+      "caution": "A failure is information; it does not require fixing everything now.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Keep verification targeted and non-punitive."}, {"source_id": "cognitive_load_theory", "basis": "Focus attention on one unit of work."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "inspect_one_error",
+      "name": "Read one error message",
+      "use_case": "Debugging or troubleshooting when an error feels like too much to investigate at once.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Read the first error message and note one unfamiliar word.",
+      "caution": "Understanding one message is enough; no fix is required yet.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Isolate one piece of troubleshooting information."}, {"source_id": "steplight_product_principles", "basis": "Separate noticing from solving."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "create_one_file",
+      "name": "Create one placeholder file",
+      "use_case": "Starting coding, writing, or digital projects where an empty workspace is a barrier.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Create one clearly named empty file for this task.",
+      "caution": "A placeholder is sufficient; it does not need content yet.",
+      "source_metadata": [{"source_id": "fogg_behavior_model", "basis": "Make a concrete first action available."}, {"source_id": "steplight_product_principles", "basis": "Reduce the blank-start barrier without pressure."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "choose_one_reference",
+      "name": "Choose one reference",
+      "use_case": "Research or study tasks with many sources, tabs, books, or links.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Choose one reference to keep open for this task.",
+      "caution": "Do not compare every source or build a complete bibliography now.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Reduce competing inputs."}, {"source_id": "steplight_product_principles", "basis": "One choice is a complete first action."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "capture_one_fact",
+      "name": "Capture one useful fact",
+      "use_case": "Study, research, or preparation when a small amount of information can anchor the next move.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Write down one fact you already know about the subject.",
+      "caution": "Recall can be partial; checking sources may come later.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Start from available knowledge, not an exhaustive plan."}, {"source_id": "cognitive_load_theory", "basis": "Keep the information unit small."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "sort_three_items",
+      "name": "Sort up to three items",
+      "use_case": "Tidying a desk, shelf, inbox, or small household area when a visible boundary is helpful.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Put up to three obvious items where they belong.",
+      "caution": "Stop at three or sooner; the surrounding area can remain as it is.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Use a bounded action and an easy stop."}, {"source_id": "fogg_behavior_model", "basis": "Reduce the effort of starting."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "clear_small_surface",
+      "name": "Clear one small surface",
+      "use_case": "Household organization or cleaning where the whole room or area feels too large.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Clear one small, visible patch of the surface.",
+      "caution": "A small patch is the whole task for now; do not expand the boundary automatically.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Keep household actions visually bounded."}, {"source_id": "cognitive_load_theory", "basis": "Avoid adding unrelated subtasks."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "start_one_load",
+      "name": "Prepare one laundry load",
+      "use_case": "Laundry tasks when sorting, washing, drying, and putting away feel like one large job.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Put one suitable group of clothes into the washer.",
+      "caution": "Starting a load does not require folding or putting away other clothes.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Separate one stage from the rest of a household task."}, {"source_id": "fogg_behavior_model", "basis": "Make the first action concrete."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "wash_one_dish",
+      "name": "Wash one dish",
+      "use_case": "Kitchen cleanup or dishes when a full sink or kitchen feels difficult to approach.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Wash or rinse one dish and let that be enough.",
+      "caution": "This is not a request to finish the sink or clean the kitchen.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "One finite household action with permission to stop."}, {"source_id": "fogg_behavior_model", "basis": "Lower the effort threshold for beginning."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "prepare_one_ingredient",
+      "name": "Prepare one ingredient",
+      "use_case": "Cooking or meal preparation when the recipe has several ingredients and steps.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Take out and prepare one ingredient for the meal.",
+      "caution": "Follow ordinary food-safety guidance; you can stop after this ingredient.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Break meal preparation into one optional action."}, {"source_id": "cognitive_load_theory", "basis": "Handle one input at a time."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "send_short_update",
+      "name": "Draft a short update",
+      "use_case": "Communication or work coordination when an update is needed but composing a complete message feels hard.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Draft one sentence describing the current status.",
+      "caution": "Review recipients and details before sending; drafting alone is enough.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Offer a small, reversible communication step."}, {"source_id": "implementation_intentions", "basis": "Use a concrete action cue."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "reply_with_acknowledgment",
+      "name": "Acknowledge one message",
+      "use_case": "Email or messaging backlogs where a simple acknowledgment can clarify the next step.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Draft a brief acknowledgment for one message.",
+      "caution": "Check the context and recipient before sending; no reply is required if it is not appropriate.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Keep communication bounded and under user control."}, {"source_id": "cognitive_load_theory", "basis": "Handle one message rather than the whole inbox."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "find_one_form_field",
+      "name": "Complete one form field",
+      "use_case": "Applications, forms, or official paperwork with many required fields.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Complete one field whose answer you already know.",
+      "caution": "Do not submit until the form has been checked for accuracy.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Make paperwork progress one field at a time."}, {"source_id": "fogg_behavior_model", "basis": "Lower friction for one action."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "identify_due_information",
+      "name": "Find one relevant date",
+      "use_case": "Bills, appointments, applications, or admin tasks where a date is needed before acting.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Find one date or reference number needed for this task.",
+      "caution": "Use the original source to verify details before making a payment or submission.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Make a single information-gathering action."}, {"source_id": "cognitive_load_theory", "basis": "Avoid processing the entire admin task at once."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "place_one_call_detail",
+      "name": "Write one call detail",
+      "use_case": "Preparing for an appointment, service call, or conversation with a specific organization.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Write down the one detail you want to remember for the call.",
+      "caution": "This is preparation only; choosing whether and when to call remains yours.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Support preparation without forcing contact."}, {"source_id": "implementation_intentions", "basis": "Clarify a possible next action."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "create_short_outline",
+      "name": "Create a short outline",
+      "use_case": "Reports, lessons, presentations, or project plans when capacity allows a little structure.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Write two or three rough headings for the work.",
+      "caution": "Keep the outline provisional; it is not a contract to complete every section.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Externalize a small amount of structure."}, {"source_id": "steplight_product_principles", "basis": "Keep scope gentle and adjustable."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "choose_first_subtask",
+      "name": "Choose one subtask",
+      "use_case": "Large multi-part projects when there is enough energy to select a starting area.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Choose one part of the project to look at first.",
+      "caution": "Choosing does not mean the other parts are less important.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Choose one next action from a larger goal."}, {"source_id": "fogg_behavior_model", "basis": "Improve action clarity and ability."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "work_one_small_unit",
+      "name": "Work on one small unit",
+      "use_case": "Study or knowledge work where a section, question, or page provides a natural boundary.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Work on one question, page, or small section of the task.",
+      "caution": "Stop at the chosen boundary or earlier; do not turn it into an unlimited session.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Use one bounded unit of work."}, {"source_id": "steplight_product_principles", "basis": "Make stopping part of the plan."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "review_one_change",
+      "name": "Review one recent change",
+      "use_case": "Coding, editing, or design tasks with a recent revision that can be checked independently.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Review one recent change for a detail you intended to update.",
+      "caution": "This is a focused check, not a demand for a complete audit.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Keep review bounded and specific."}, {"source_id": "cognitive_load_theory", "basis": "Focus attention on one change."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "write_one_decision",
+      "name": "Record one decision",
+      "use_case": "Planning, design, or project work that is waiting on an unresolved choice.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Write down one decision this task currently needs.",
+      "caution": "Recording the choice is not the same as deciding immediately.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Externalize one open decision."}, {"source_id": "steplight_product_principles", "basis": "Separate noticing a decision from resolving it."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "prepare_workspace",
+      "name": "Prepare one workspace detail",
+      "use_case": "Focused project work where a small environmental adjustment could make the next action clearer.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Move one unrelated item away from the space you will use.",
+      "caution": "Do not reorganize the whole workspace before starting.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Reduce competing cues without turning preparation into another project."}, {"source_id": "fogg_behavior_model", "basis": "Make the target action easier."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "make_one_booking_step",
+      "name": "Find one booking detail",
+      "use_case": "Appointments or reservations where a location, date range, or contact is needed.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Find the official page or number used to arrange the appointment.",
+      "caution": "Verify that it is the correct provider before sharing personal details.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "One research step without forcing a booking."}, {"source_id": "cognitive_load_theory", "basis": "Handle one information need at a time."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "set_aside_needed_item",
+      "name": "Set aside one needed item",
+      "use_case": "Errands, packing, household maintenance, or a hands-on task with a specific first item.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Set aside one item you will need for the task.",
+      "caution": "One item is enough; gathering everything is not expected.",
+      "source_metadata": [{"source_id": "fogg_behavior_model", "basis": "Make an action easier to begin."}, {"source_id": "steplight_product_principles", "basis": "Limit setup to one action."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "check_one_requirement",
+      "name": "Check one requirement",
+      "use_case": "Applications, assignments, or projects with formal instructions and acceptance criteria.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Read one requirement and mark where it appears in your work.",
+      "caution": "Do not infer requirements that are not written in the source.",
+      "source_metadata": [{"source_id": "cognitive_load_theory", "basis": "Focus on one rule at a time."}, {"source_id": "steplight_product_principles", "basis": "Use a narrow, verifiable next action."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "write_one_question_to_ask",
+      "name": "Write one question to ask",
+      "use_case": "Tasks requiring help, clarification, or a conversation with another person.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Write one question that would make the next part clearer.",
+      "caution": "You can decide later whether or whom to ask.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Create a low-pressure preparation action."}, {"source_id": "implementation_intentions", "basis": "Make the possible next behavior concrete."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "review_one_calendar_item",
+      "name": "Review one calendar item",
+      "use_case": "Scheduling or planning when several commitments compete for attention.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Look at one calendar entry related to this task.",
+      "caution": "Viewing the calendar does not require rescheduling anything.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Limit planning to a single reference point."}, {"source_id": "cognitive_load_theory", "basis": "Reduce simultaneous scheduling decisions."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "outline_one_meeting_point",
+      "name": "Note one meeting point",
+      "use_case": "Preparing for a meeting or presentation with several topics.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Write one point you would like to mention in the meeting.",
+      "caution": "This is an optional note, not a full script.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "One small preparation step."}, {"source_id": "cognitive_load_theory", "basis": "Externalize one thought instead of preparing everything."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "make_one_small_purchase_list",
+      "name": "List one needed supply",
+      "use_case": "Errand, shopping, or household project that depends on knowing one missing item.",
+      "capacity_fit": ["low", "medium"],
+      "sample": "Write down one supply you know this task needs.",
+      "caution": "Check what you already have before buying anything.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Keep preparation to one item."}, {"source_id": "cognitive_load_theory", "basis": "Avoid expanding a small step into a full inventory."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "complete_one_small_section",
+      "name": "Complete one small section",
+      "use_case": "A task already underway with a natural, clearly bounded section that can be finished.",
+      "capacity_fit": ["medium", "high"],
+      "sample": "Finish one clearly bounded section of the task.",
+      "caution": "Choose a section that fits today's capacity; completion is optional.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Offer a bounded step, never an unlimited sprint."}, {"source_id": "fogg_behavior_model", "basis": "Keep the action feasible in context."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "choose_a_stopping_point",
+      "name": "Choose a stopping point",
+      "use_case": "An open-ended task where a gentle limit would make it easier to approach.",
+      "capacity_fit": ["low", "medium", "high"],
+      "sample": "Choose one small result that would be enough for this session.",
+      "caution": "The stopping point may be changed or the session may end sooner.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Make stopping a valid part of progress."}, {"source_id": "cognitive_load_theory", "basis": "Bound the immediate scope."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    },
+    {
+      "id": "pause_and_choose",
+      "name": "Choose whether to continue",
+      "use_case": "After completing an action when capacity may have shifted.",
+      "capacity_fit": ["low", "medium", "high"],
+      "sample": "Pause and choose whether to continue, adjust, or stop here.",
+      "caution": "Rest or stopping is a complete and acceptable choice.",
+      "source_metadata": [{"source_id": "steplight_product_principles", "basis": "Honor capacity changes without guilt or streak pressure."}, {"source_id": "fogg_behavior_model", "basis": "Let ability and context inform the next action."}],
+      "content_review": {"reviewer": "Steplight implementation editorial review", "reviewed_on": "2026-10-24", "checks": ["non_diagnostic", "optional", "single_action", "capacity_fit"]}
+    }
+  ]
+}

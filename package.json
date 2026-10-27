@@ -1,0 +1,35 @@
+{
+  "name": "steplight-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Steplight AI monorepo - One Tiny Step. Zero Shame.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "npm run dev --workspace=@steplight/web",
+    "dev:desktop": "npm run dev --workspace=@steplight/desktop",
+    "dev:backend": "python -m uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 18765",
+    "db:migrate": "alembic -c backend/alembic.ini upgrade head",
+    "db:rollback": "alembic -c backend/alembic.ini downgrade -1",
+    "db:seed": "python -m backend.app.seed",
+    "build": "npm run build --workspaces",
+    "build:shared": "npm run build --workspace=@steplight/shared",
+    "build:web": "npm run build --workspace=@steplight/web",
+    "build:desktop": "npm run build --workspace=@steplight/desktop",
+    "package:win": "npm run build:web && npm run build:desktop && npm run dist:win --workspace=@steplight/desktop",
+    "typecheck": "npm run typecheck --workspaces",
+    "typecheck:web": "npm run typecheck --workspace=@steplight/web",
+    "typecheck:desktop": "npm run typecheck --workspace=@steplight/desktop",
+    "typecheck:shared": "npm run typecheck --workspace=@steplight/shared",
+    "test": "npm run test:shared && npm run test:web && npm run test:backend",
+    "test:shared": "npm run test --workspace=@steplight/shared",
+    "test:web": "npm run test --workspace=@steplight/web",
+    "test:backend": "python -m pytest backend/tests -v"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

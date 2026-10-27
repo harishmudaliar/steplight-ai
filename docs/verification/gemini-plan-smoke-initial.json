@@ -1,0 +1,1087 @@
+{
+  "base_url": "http://127.0.0.1:18765/api",
+  "model": "gemini-3.5-flash-lite",
+  "cases": [
+    {
+      "goal": "I need to complete my Python assignment on Decision Trees.",
+      "capacity": "low",
+      "status": 200,
+      "seconds": 14.3,
+      "task_id": "70d02067-7681-49e6-8892-508588bf1347",
+      "plan": {
+        "id": "70d02067-7681-49e6-8892-508588bf1347",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Python Decision Trees Assignment",
+        "notes": null,
+        "original_input": "I need to complete my Python assignment on Decision Trees.",
+        "description": "A step-by-step plan to complete your Python assignment on Decision Trees with low capacity steps.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": false,
+        "capacity": "low",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:50:49",
+        "updated_at": "2026-10-25T13:51:03",
+        "steps": [
+          {
+            "id": "f3553a25-46f8-495b-b528-4c3ec9068238",
+            "task_id": "70d02067-7681-49e6-8892-508588bf1347",
+            "order": 1,
+            "title": "Review Assignment Requirements",
+            "reason": "Understanding the exact deliverables prevents wasted effort.",
+            "instruction": "Open your assignment document and read through the prompt, noting the required dataset and questions.",
+            "effort": "low",
+            "research_suggestions": [
+              "decision tree python homework rubric"
+            ],
+            "estimated_duration": 180,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "723929bd-0ef9-4063-b652-70146ee5e3af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:03"
+          },
+          {
+            "id": "05795447-5833-4186-98c1-d712bf1cda03",
+            "task_id": "70d02067-7681-49e6-8892-508588bf1347",
+            "order": 2,
+            "title": "Set Up Python Environment",
+            "reason": "Having a clean workspace ready makes coding smoother.",
+            "instruction": "Open Jupyter Notebook or your preferred Python IDE and create a new notebook for the assignment.",
+            "effort": "low",
+            "research_suggestions": [
+              "jupyter notebook setup"
+            ],
+            "estimated_duration": 120,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "723929bd-0ef9-4063-b652-70146ee5e3af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:03"
+          },
+          {
+            "id": "6032a7b5-9516-4eb7-ad0d-e226aa608a37",
+            "task_id": "70d02067-7681-49e6-8892-508588bf1347",
+            "order": 3,
+            "title": "Import Necessary Libraries",
+            "reason": "These libraries contain all the tools needed for data manipulation and modeling.",
+            "instruction": "Write and run the import statements for pandas, numpy, and sklearn DecisionTreeClassifier.",
+            "effort": "low",
+            "research_suggestions": [
+              "sklearn DecisionTreeClassifier import"
+            ],
+            "estimated_duration": 120,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "723929bd-0ef9-4063-b652-70146ee5e3af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:03"
+          },
+          {
+            "id": "6ee38615-a07e-4e54-917f-1ee6e73c580e",
+            "task_id": "70d02067-7681-49e6-8892-508588bf1347",
+            "order": 4,
+            "title": "Load and Inspect Dataset",
+            "reason": "Checking the data helps identify missing values and features.",
+            "instruction": "Load the dataset using pandas and run .head() and .info() to check the data structure.",
+            "effort": "low",
+            "research_suggestions": [
+              "pandas read_csv head info"
+            ],
+            "estimated_duration": 180,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "723929bd-0ef9-4063-b652-70146ee5e3af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:03"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "I need to complete my Python assignment on Decision Trees.",
+      "capacity": "medium",
+      "status": 200,
+      "seconds": 3.0,
+      "task_id": "c65dea95-e89b-4a99-a718-d9925018526c",
+      "plan": {
+        "id": "c65dea95-e89b-4a99-a718-d9925018526c",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Complete Python Decision Trees Assignment",
+        "notes": null,
+        "original_input": "I need to complete my Python assignment on Decision Trees.",
+        "description": "A step-by-step plan to successfully write, test, and submit the Python assignment on Decision Trees.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "medium",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:04",
+        "updated_at": "2026-10-25T13:51:07",
+        "steps": [
+          {
+            "id": "053a538d-9d2e-4a6a-9b5a-2a7fb1e5f80c",
+            "task_id": "c65dea95-e89b-4a99-a718-d9925018526c",
+            "order": 1,
+            "title": "Review Assignment Requirements",
+            "reason": "Understanding the exact requirements prevents wasted effort and ensures all grading criteria are met.",
+            "instruction": "Read through the assignment prompt and rubric completely, noting required libraries and expected outputs.",
+            "effort": "medium",
+            "research_suggestions": [
+              "decision tree assignment rubric checklist"
+            ],
+            "estimated_duration": 300,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "3305342e-18b8-4f60-9902-6bb93528ebfe",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:07"
+          },
+          {
+            "id": "fa608d2f-d059-48e2-a956-5dca9f77ebfe",
+            "task_id": "c65dea95-e89b-4a99-a718-d9925018526c",
+            "order": 2,
+            "title": "Set Up Environment and Import Libraries",
+            "reason": "Having the environment ready allows for quick testing of code snippets.",
+            "instruction": "Open your Python notebook or IDE, and import pandas, numpy, and sklearn modules for decision trees.",
+            "effort": "medium",
+            "research_suggestions": [
+              "sklearn DecisionTreeClassifier import syntax"
+            ],
+            "estimated_duration": 300,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "3305342e-18b8-4f60-9902-6bb93528ebfe",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:07"
+          },
+          {
+            "id": "f86f68f4-cacf-44a9-94da-89b20e41940e",
+            "task_id": "c65dea95-e89b-4a99-a718-d9925018526c",
+            "order": 3,
+            "title": "Load and Explore the Dataset",
+            "reason": "Data preprocessing is a critical first step before training any machine learning model.",
+            "instruction": "Load the provided dataset into a pandas DataFrame, check for missing values, and inspect feature types.",
+            "effort": "medium",
+            "research_suggestions": [
+              "pandas inspect dataframe missing values"
+            ],
+            "estimated_duration": 600,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "3305342e-18b8-4f60-9902-6bb93528ebfe",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:07"
+          },
+          {
+            "id": "71602a2c-0e31-412e-a02a-6728e16ba085",
+            "task_id": "c65dea95-e89b-4a99-a718-d9925018526c",
+            "order": 4,
+            "title": "Train the Decision Tree Model",
+            "reason": "This is the core implementation requirement of the assignment.",
+            "instruction": "Split the data into training and testing sets, instantiate the DecisionTreeClassifier, and fit it to the training data.",
+            "effort": "medium",
+            "research_suggestions": [
+              "train_test_split sklearn example"
+            ],
+            "estimated_duration": 600,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "3305342e-18b8-4f60-9902-6bb93528ebfe",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:07"
+          },
+          {
+            "id": "64e5b888-1b57-4675-9b1a-13e2d898c2ae",
+            "task_id": "c65dea95-e89b-4a99-a718-d9925018526c",
+            "order": 5,
+            "title": "Evaluate and Visualize the Model",
+            "reason": "Evaluation and visualization prove that the model works and help interpret the results.",
+            "instruction": "Calculate accuracy scores, generate a classification report, and plot the decision tree.",
+            "effort": "medium",
+            "research_suggestions": [
+              "plot_tree sklearn matplotlib example"
+            ],
+            "estimated_duration": 600,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "3305342e-18b8-4f60-9902-6bb93528ebfe",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:07"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "I need to complete my Python assignment on Decision Trees.",
+      "capacity": "high",
+      "status": 200,
+      "seconds": 2.3,
+      "task_id": "d9713416-d94e-4d5b-9c1a-a62e0e1e9c21",
+      "plan": {
+        "id": "d9713416-d94e-4d5b-9c1a-a62e0e1e9c21",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Complete Python Decision Trees Assignment",
+        "notes": null,
+        "original_input": "I need to complete my Python assignment on Decision Trees.",
+        "description": "A comprehensive plan to finish the Python Decision Trees assignment by reviewing materials, implementing the model, and testing the results.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "high",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:07",
+        "updated_at": "2026-10-25T13:51:09",
+        "steps": [
+          {
+            "id": "04b0962d-6875-4455-9ceb-15197e3677bd",
+            "task_id": "d9713416-d94e-4d5b-9c1a-a62e0e1e9c21",
+            "order": 1,
+            "title": "Review Assignment Requirements",
+            "reason": "Understanding the exact requirements ensures you focus your efforts correctly and don't miss any grading criteria.",
+            "instruction": "Read through the assignment prompt and dataset description to identify all required questions, metrics, and deliverables.",
+            "effort": "high",
+            "research_suggestions": [
+              "decision tree assignment rubric",
+              "scikit-learn decision tree classifier documentation"
+            ],
+            "estimated_duration": 900,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "860e189e-4f04-4b4e-8dcf-6d658975013b",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:09"
+          },
+          {
+            "id": "04f158d8-699d-486e-a13e-bc12c19c455b",
+            "task_id": "d9713416-d94e-4d5b-9c1a-a62e0e1e9c21",
+            "order": 2,
+            "title": "Set Up Environment and Load Data",
+            "reason": "Proper environment setup and data inspection are foundational for any machine learning task.",
+            "instruction": "Open your Jupyter Notebook or preferred Python environment, import pandas, numpy, and scikit-learn, and load the dataset.",
+            "effort": "high",
+            "research_suggestions": [
+              "pandas read csv",
+              "sklearn train test split python"
+            ],
+            "estimated_duration": 1200,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "860e189e-4f04-4b4e-8dcf-6d658975013b",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:09"
+          },
+          {
+            "id": "4a354417-69b8-463b-8812-4bc123205ba9",
+            "task_id": "d9713416-d94e-4d5b-9c1a-a62e0e1e9c21",
+            "order": 3,
+            "title": "Train and Evaluate the Decision Tree Model",
+            "reason": "This is the core implementation step of the assignment.",
+            "instruction": "Initialize the DecisionTreeClassifier, fit it to your training data, make predictions, and calculate accuracy and classification reports.",
+            "effort": "high",
+            "research_suggestions": [
+              "DecisionTreeClassifier scikit learn example",
+              "classification report sklearn python"
+            ],
+            "estimated_duration": 2100,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "860e189e-4f04-4b4e-8dcf-6d658975013b",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:09"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Prepare for my DBMS examination covering SQL, normalization and transactions.",
+      "capacity": "low",
+      "status": 200,
+      "seconds": 2.4,
+      "task_id": "2ecfcfb5-e051-4589-9633-d2cf3e7efcd0",
+      "plan": {
+        "id": "2ecfcfb5-e051-4589-9633-d2cf3e7efcd0",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "DBMS Examination Preparation",
+        "notes": null,
+        "original_input": "Prepare for my DBMS examination covering SQL, normalization and transactions.",
+        "description": "Prepare effectively for a Database Management Systems examination covering SQL, normalization, and transactions with a low-capacity, granular approach.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "low",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:09",
+        "updated_at": "2026-10-25T13:51:11",
+        "steps": [
+          {
+            "id": "c134d3b4-d91e-463e-81f5-196fe75826e6",
+            "task_id": "2ecfcfb5-e051-4589-9633-d2cf3e7efcd0",
+            "order": 1,
+            "title": "Review SQL Basics",
+            "reason": "Identifying a specific starting point prevents overwhelm and focuses your study session.",
+            "instruction": "Write down one core SQL concept you need to review first, such as JOINs or subqueries.",
+            "effort": "low",
+            "research_suggestions": [
+              "SQL joins tutorial",
+              "advanced SQL queries examples"
+            ],
+            "estimated_duration": 120,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "69134d67-109d-41d5-bb17-ff80dc683b5d",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:11"
+          },
+          {
+            "id": "cb791cd8-3905-46fe-bc2d-efdfd0d1d799",
+            "task_id": "2ecfcfb5-e051-4589-9633-d2cf3e7efcd0",
+            "order": 2,
+            "title": "Outline Normalization Forms",
+            "reason": "Breaking down normalization into individual steps makes database design theory manageable.",
+            "instruction": "Mark one normal form (1NF, 2NF, 3NF, or BCNF) on your syllabus to study today.",
+            "effort": "low",
+            "research_suggestions": [
+              "database normalization steps 1NF 2NF 3NF",
+              "BCNF explanation"
+            ],
+            "estimated_duration": 120,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "69134d67-109d-41d5-bb17-ff80dc683b5d",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:11"
+          },
+          {
+            "id": "af509519-b285-4175-951e-4b1fb78f8d5c",
+            "task_id": "2ecfcfb5-e051-4589-9633-d2cf3e7efcd0",
+            "order": 3,
+            "title": "Note Transaction Properties",
+            "reason": "ACID properties are a fundamental and frequently tested concept in DBMS transactions.",
+            "instruction": "Write down the four ACID properties of transactions and what the acronym stands for.",
+            "effort": "low",
+            "research_suggestions": [
+              "ACID properties in DBMS",
+              "transaction management SQL"
+            ],
+            "estimated_duration": 180,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "69134d67-109d-41d5-bb17-ff80dc683b5d",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:11"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Prepare for my DBMS examination covering SQL, normalization and transactions.",
+      "capacity": "medium",
+      "status": 200,
+      "seconds": 3.4,
+      "task_id": "f0d09e0b-0b99-49e7-8efa-676ffc4acc3a",
+      "plan": {
+        "id": "f0d09e0b-0b99-49e7-8efa-676ffc4acc3a",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "DBMS Examination Preparation",
+        "notes": null,
+        "original_input": "Prepare for my DBMS examination covering SQL, normalization and transactions.",
+        "description": "A structured plan to study SQL queries, database normalization, and transaction management for your upcoming DBMS exam.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "medium",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:11",
+        "updated_at": "2026-10-25T13:51:15",
+        "steps": [
+          {
+            "id": "2162d33f-270a-4fda-bf60-84d1d7b4ae4b",
+            "task_id": "f0d09e0b-0b99-49e7-8efa-676ffc4acc3a",
+            "order": 1,
+            "title": "Review SQL Queries and Joins",
+            "reason": "SQL is a major practical component of DBMS exams and requires active recall of syntax and logic.",
+            "instruction": "Go through your notes on complex SQL queries, including inner/outer joins, nested subqueries, and aggregate functions. Write down two examples for each type.",
+            "effort": "medium",
+            "research_suggestions": [
+              "advanced SQL query examples",
+              "SQL joins tutorial practice"
+            ],
+            "estimated_duration": 600,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "d3fa70d7-059d-4e40-a4d4-7a7b2c2c4aae",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:15"
+          },
+          {
+            "id": "b385af71-f001-4c60-a03d-9ca793411f68",
+            "task_id": "f0d09e0b-0b99-49e7-8efa-676ffc4acc3a",
+            "order": 2,
+            "title": "Practice Normalization Forms",
+            "reason": "Normalization questions are guaranteed exam staples; practicing decomposition ensures you can apply the theoretical rules correctly.",
+            "instruction": "Review the rules for 1NF, 2NF, 3NF, and BCNF. Take a sample unnormalized relation and decompose it step-by-step up to 3NF.",
+            "effort": "medium",
+            "research_suggestions": [
+              "database normalization examples 1NF 2NF 3NF",
+              "BCNF decomposition practice problems"
+            ],
+            "estimated_duration": 600,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "d3fa70d7-059d-4e40-a4d4-7a7b2c2c4aae",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:15"
+          },
+          {
+            "id": "bf6ad5ab-b444-4d31-b276-8f678f519c98",
+            "task_id": "f0d09e0b-0b99-49e7-8efa-676ffc4acc3a",
+            "order": 3,
+            "title": "Study Transaction Management and ACID Properties",
+            "reason": "Theoretical concepts like ACID properties and concurrency anomalies form the core of the written portion of the exam.",
+            "instruction": "Read through transaction states, concurrency control protocols, and the four ACID properties. Summarize each ACID property in your own words.",
+            "effort": "medium",
+            "research_suggestions": [
+              "ACID properties in DBMS",
+              "database concurrency control protocols"
+            ],
+            "estimated_duration": 480,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "d3fa70d7-059d-4e40-a4d4-7a7b2c2c4aae",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:15"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Prepare for my DBMS examination covering SQL, normalization and transactions.",
+      "capacity": "high",
+      "status": 200,
+      "seconds": 2.9,
+      "task_id": "295182a1-31d0-43ee-a640-082d59ca0c94",
+      "plan": {
+        "id": "295182a1-31d0-43ee-a640-082d59ca0c94",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "DBMS Examination Preparation",
+        "notes": null,
+        "original_input": "Prepare for my DBMS examination covering SQL, normalization and transactions.",
+        "description": "A structured study plan to master SQL, database normalization, and transaction management for your upcoming DBMS examination.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "high",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:15",
+        "updated_at": "2026-10-25T13:51:18",
+        "steps": [
+          {
+            "id": "e0ebaf46-1dc4-499a-ba19-ccd3754534a2",
+            "task_id": "295182a1-31d0-43ee-a640-082d59ca0c94",
+            "order": 1,
+            "title": "Review SQL Queries and Joins",
+            "reason": "SQL is heavily weighted in DBMS exams and requires active practice of syntax and logic.",
+            "instruction": "Go through advanced SQL concepts including inner/outer joins, nested subqueries, and aggregate functions. Write out 5 complex query examples by hand.",
+            "effort": "high",
+            "research_suggestions": [
+              "SQL advanced joins practice problems",
+              "DBMS SQL subqueries examples"
+            ],
+            "estimated_duration": 1800,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "293e299f-6132-4000-873f-4d32c864cf7f",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:18"
+          },
+          {
+            "id": "9dba1f17-3227-4539-bba6-9e2b7c12ef4e",
+            "task_id": "295182a1-31d0-43ee-a640-082d59ca0c94",
+            "order": 2,
+            "title": "Master Database Normalization",
+            "reason": "Normalization questions appear in almost every DBMS exam testing functional dependencies and lossless decomposition.",
+            "instruction": "Study 1st, 2nd, 3rd, and Boyce-Codd Normal Forms (BCNF). Practice decomposing a non-normalized relation into BCNF.",
+            "effort": "high",
+            "research_suggestions": [
+              "Normalization functional dependencies BCNF examples",
+              "database design normal forms tutorial"
+            ],
+            "estimated_duration": 2100,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "293e299f-6132-4000-873f-4d32c864cf7f",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:18"
+          },
+          {
+            "id": "9aeed243-2cb0-4b5c-951f-8956de6763b8",
+            "task_id": "295182a1-31d0-43ee-a640-082d59ca0c94",
+            "order": 3,
+            "title": "Understand Transactions and ACID Properties",
+            "reason": "Concurrency control and transaction management form the theoretical backbone of database engine exams.",
+            "instruction": "Review ACID properties, transaction states, schedules, serializability, and concurrency control protocols like two-phase locking.",
+            "effort": "high",
+            "research_suggestions": [
+              "ACID properties and concurrency control in DBMS",
+              "serializability and two phase locking protocol"
+            ],
+            "estimated_duration": 1800,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "293e299f-6132-4000-873f-4d32c864cf7f",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:18"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Write a project report about a traffic data engineering pipeline.",
+      "capacity": "low",
+      "status": 200,
+      "seconds": 1.9,
+      "task_id": "9b7792d9-1108-42be-8220-76e751a5b861",
+      "plan": {
+        "id": "9b7792d9-1108-42be-8220-76e751a5b861",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Traffic Data Engineering Pipeline Report",
+        "notes": null,
+        "original_input": "Write a project report about a traffic data engineering pipeline.",
+        "description": "Create a comprehensive project report detailing the architecture, implementation, and results of a traffic data engineering pipeline.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "low",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:18",
+        "updated_at": "2026-10-25T13:51:20",
+        "steps": [
+          {
+            "id": "5ba467a9-b638-4791-b757-5b64a308efb8",
+            "task_id": "9b7792d9-1108-42be-8220-76e751a5b861",
+            "order": 1,
+            "title": "Outline Report Structure",
+            "reason": "Provides a clear roadmap for writing the report efficiently.",
+            "instruction": "Draft the main sections of the report including Introduction, Architecture, Data Ingestion, Processing, and Conclusion.",
+            "effort": "low",
+            "research_suggestions": [
+              "traffic data engineering pipeline architecture",
+              "project report structure template"
+            ],
+            "estimated_duration": 180,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "5e7eb565-f83b-453b-b651-05723a49e9dd",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:20"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Write a project report about a traffic data engineering pipeline.",
+      "capacity": "medium",
+      "status": 200,
+      "seconds": 2.1,
+      "task_id": "cf28941f-a85a-4efc-ba68-f6cfee67fb6e",
+      "plan": {
+        "id": "cf28941f-a85a-4efc-ba68-f6cfee67fb6e",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Write Traffic Data Engineering Pipeline Project Report",
+        "notes": null,
+        "original_input": "Write a project report about a traffic data engineering pipeline.",
+        "description": "Create a comprehensive project report detailing the architecture, implementation, and results of a traffic data engineering pipeline.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "medium",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:20",
+        "updated_at": "2026-10-25T13:51:22",
+        "steps": [
+          {
+            "id": "54417921-8638-432e-b0d2-100cc2bb02c7",
+            "task_id": "cf28941f-a85a-4efc-ba68-f6cfee67fb6e",
+            "order": 1,
+            "title": "Create Report Outline",
+            "reason": "Establishes a clear structure to guide the writing process.",
+            "instruction": "Write out the main headings for the report including Introduction, Architecture, Data Ingestion, Processing, and Conclusion.",
+            "effort": "medium",
+            "research_suggestions": [
+              "data engineering report structure",
+              "traffic data pipeline architecture template"
+            ],
+            "estimated_duration": 600,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "f27cf571-8553-4174-a59e-05fc64b868d5",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:22"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Write a project report about a traffic data engineering pipeline.",
+      "capacity": "high",
+      "status": 200,
+      "seconds": 4.8,
+      "task_id": "d8647c35-6f7d-463a-bbde-97153ccd1a7b",
+      "plan": {
+        "id": "d8647c35-6f7d-463a-bbde-97153ccd1a7b",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Write Traffic Data Engineering Pipeline Report",
+        "notes": null,
+        "original_input": "Write a project report about a traffic data engineering pipeline.",
+        "description": "Create a comprehensive project report detailing the architecture, implementation, and results of a traffic data engineering pipeline.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "high",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:22",
+        "updated_at": "2026-10-25T13:51:27",
+        "steps": [
+          {
+            "id": "fb54cf77-81ab-4b3a-b00a-2b83373b8ba5",
+            "task_id": "d8647c35-6f7d-463a-bbde-97153ccd1a7b",
+            "order": 1,
+            "title": "Outline Report Structure",
+            "reason": "Provides a clear roadmap and logical flow for drafting the technical report.",
+            "instruction": "Draft the main sections of the report including Introduction, Architecture, Data Ingestion, Processing, Storage, and Conclusion.",
+            "effort": "medium",
+            "research_suggestions": [
+              "technical report structure templates",
+              "data engineering project report outline"
+            ],
+            "estimated_duration": 900,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "5a610816-17c4-4cd3-9a90-29369cb101e5",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:27"
+          },
+          {
+            "id": "81e880af-acad-4994-a893-e02c6fac9698",
+            "task_id": "d8647c35-6f7d-463a-bbde-97153ccd1a7b",
+            "order": 2,
+            "title": "Document Pipeline Architecture",
+            "reason": "Forms the core technical content of the report explaining how the data flows.",
+            "instruction": "Write a detailed description of the data sources, ingestion methods, transformation logic, and final data warehouse schema.",
+            "effort": "high",
+            "research_suggestions": [
+              "traffic data pipeline architecture best practices",
+              "streaming vs batch processing data engineering"
+            ],
+            "estimated_duration": 1800,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "5a610816-17c4-4cd3-9a90-29369cb101e5",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:27"
+          },
+          {
+            "id": "49309c0c-b3cc-4310-ba7b-92030e88c338",
+            "task_id": "d8647c35-6f7d-463a-bbde-97153ccd1a7b",
+            "order": 3,
+            "title": "Summarize Performance and Challenges",
+            "reason": "Demonstrates critical evaluation and practical insights gained from building the pipeline.",
+            "instruction": "Add a section covering pipeline latency, scalability, handling of missing data, and lessons learned during development.",
+            "effort": "medium",
+            "research_suggestions": [
+              "data pipeline performance metrics",
+              "troubleshooting high latency data pipelines"
+            ],
+            "estimated_duration": 1200,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "5a610816-17c4-4cd3-9a90-29369cb101e5",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:27"
+          },
+          {
+            "id": "f6525379-70b9-4975-b154-a6f4447a4d53",
+            "task_id": "d8647c35-6f7d-463a-bbde-97153ccd1a7b",
+            "order": 4,
+            "title": "Review and Refine",
+            "reason": "Ensures the final deliverable is professional and ready for stakeholders.",
+            "instruction": "Proofread the entire document for clarity, technical accuracy, and formatting consistency.",
+            "effort": "low",
+            "research_suggestions": [
+              "technical writing best practices"
+            ],
+            "estimated_duration": 900,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "5a610816-17c4-4cd3-9a90-29369cb101e5",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:27"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Clean and organize my kitchen before cooking dinner.",
+      "capacity": "low",
+      "status": 200,
+      "seconds": 2.3,
+      "task_id": "ec223626-9a00-483f-961f-a32eaf296dde",
+      "plan": {
+        "id": "ec223626-9a00-483f-961f-a32eaf296dde",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Kitchen Quick Clean and Organize",
+        "notes": null,
+        "original_input": "Clean and organize my kitchen before cooking dinner.",
+        "description": "A low-capacity plan to get the kitchen ready for cooking dinner by tackling small, manageable steps.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "low",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:27",
+        "updated_at": "2026-10-25T13:51:29",
+        "steps": [
+          {
+            "id": "21697ffd-890d-4866-a896-e58e73c9f1b8",
+            "task_id": "ec223626-9a00-483f-961f-a32eaf296dde",
+            "order": 1,
+            "title": "Clear Counter Space",
+            "reason": "Creating a small cleared space immediately makes cooking feel more achievable.",
+            "instruction": "Clear off just three items from the main cooking counter and put them where they belong.",
+            "effort": "low",
+            "research_suggestions": [],
+            "estimated_duration": 180,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "cf5da676-8bd5-4fe4-af8b-56d4f3b96e94",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:29"
+          },
+          {
+            "id": "0a20e311-10ad-4668-9a4b-7db0f26aad4d",
+            "task_id": "ec223626-9a00-483f-961f-a32eaf296dde",
+            "order": 2,
+            "title": "Wash One Dish",
+            "reason": "Starting with a single item lowers the barrier to entry for larger cleanup tasks.",
+            "instruction": "Wash or rinse just one dish from the sink to build gentle momentum.",
+            "effort": "low",
+            "research_suggestions": [],
+            "estimated_duration": 120,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "cf5da676-8bd5-4fe4-af8b-56d4f3b96e94",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:29"
+          },
+          {
+            "id": "08758b33-873f-4343-a22c-318487c0b412",
+            "task_id": "ec223626-9a00-483f-961f-a32eaf296dde",
+            "order": 3,
+            "title": "Prepare One Ingredient",
+            "reason": "Bridges the gap between cleaning and starting the cooking process smoothly.",
+            "instruction": "Take out and place on the counter one ingredient you need for tonight's dinner.",
+            "effort": "low",
+            "research_suggestions": [],
+            "estimated_duration": 180,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "cf5da676-8bd5-4fe4-af8b-56d4f3b96e94",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:29"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Clean and organize my kitchen before cooking dinner.",
+      "capacity": "medium",
+      "status": 200,
+      "seconds": 2.3,
+      "task_id": "01fe8a55-5c30-4fc4-b0b7-aa1c36e88997",
+      "plan": {
+        "id": "01fe8a55-5c30-4fc4-b0b7-aa1c36e88997",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Kitchen Cleanup and Organization",
+        "notes": null,
+        "original_input": "Clean and organize my kitchen before cooking dinner.",
+        "description": "Clean and organize the kitchen efficiently to prepare a smooth cooking environment for dinner.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": true,
+        "capacity": "medium",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:29",
+        "updated_at": "2026-10-25T13:51:31",
+        "steps": [
+          {
+            "id": "029c3978-1567-4aff-a3f8-3b020108c200",
+            "task_id": "01fe8a55-5c30-4fc4-b0b7-aa1c36e88997",
+            "order": 1,
+            "title": "Clear the Sink",
+            "reason": "A clear sink is essential for washing food and utensils while cooking.",
+            "instruction": "Wash or load into the dishwasher any dishes currently sitting in the sink to create working space.",
+            "effort": "medium",
+            "research_suggestions": [
+              "fast dishwashing routine"
+            ],
+            "estimated_duration": 480,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "694cefc3-88fd-419b-9b4e-1f65315f05af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:31"
+          },
+          {
+            "id": "361620b3-67be-476a-a566-2ceac0c7b4a7",
+            "task_id": "01fe8a55-5c30-4fc4-b0b7-aa1c36e88997",
+            "order": 2,
+            "title": "Clear Countertops",
+            "reason": "Clearing counters provides the necessary physical space to chop and prep ingredients safely.",
+            "instruction": "Put away stray items, mail, or appliances from the main prep counters into their proper places.",
+            "effort": "medium",
+            "research_suggestions": [
+              "efficient kitchen counter decluttering"
+            ],
+            "estimated_duration": 420,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "694cefc3-88fd-419b-9b4e-1f65315f05af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:31"
+          },
+          {
+            "id": "540bb2bf-66d5-4931-af0a-5adfcaa9540c",
+            "task_id": "01fe8a55-5c30-4fc4-b0b7-aa1c36e88997",
+            "order": 3,
+            "title": "Wipe Down Surfaces",
+            "reason": "Ensures a sanitary and pleasant surface for food preparation.",
+            "instruction": "Quickly wipe down the main prep counters with a damp cloth and all-purpose cleaner.",
+            "effort": "low",
+            "research_suggestions": [
+              "quick kitchen sanitizing tips"
+            ],
+            "estimated_duration": 300,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "694cefc3-88fd-419b-9b4e-1f65315f05af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:31"
+          },
+          {
+            "id": "766a9305-49a9-456f-9aaa-8525bcae0e5e",
+            "task_id": "01fe8a55-5c30-4fc4-b0b7-aa1c36e88997",
+            "order": 4,
+            "title": "Gather Dinner Ingredients",
+            "reason": "Having everything ready makes the actual cooking process much smoother and less stressful.",
+            "instruction": "Pull out all the ingredients and tools needed for tonight's dinner and place them on the cleared counter.",
+            "effort": "low",
+            "research_suggestions": [
+              "mise en place basics"
+            ],
+            "estimated_duration": 300,
+            "strategy": "ai_strategy_guidance",
+            "source": "GEMINI",
+            "generation_id": "694cefc3-88fd-419b-9b4e-1f65315f05af",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:31"
+          }
+        ]
+      }
+    },
+    {
+      "goal": "Clean and organize my kitchen before cooking dinner.",
+      "capacity": "high",
+      "status": 200,
+      "seconds": 4.8,
+      "task_id": "ff57124b-354c-4f71-998d-02800a21cff1",
+      "plan": {
+        "id": "ff57124b-354c-4f71-998d-02800a21cff1",
+        "user_id": "844c0059-82b0-48a9-9624-07103a243198",
+        "title": "Kitchen Organization and Cleaning Plan",
+        "notes": null,
+        "original_input": "Clean and organize my kitchen before cooking dinner.",
+        "description": "A comprehensive plan to clean and organize the kitchen efficiently before preparing dinner.",
+        "plan_model": "gemini-3.5-flash-lite",
+        "plan_guidance": false,
+        "capacity": "high",
+        "status": "active",
+        "version": 2,
+        "created_at": "2026-10-25T13:51:31",
+        "updated_at": "2026-10-25T13:51:36",
+        "steps": [
+          {
+            "id": "70359527-b1f6-4bbe-9df9-8b107852dae0",
+            "task_id": "ff57124b-354c-4f71-998d-02800a21cff1",
+            "order": 1,
+            "title": "Clear Countertops",
+            "reason": "Clearing the counters provides the physical space needed for food prep and cooking.",
+            "instruction": "Gather all items currently sitting on the countertops and return them to their proper homes, such as putting pantry items away or moving dirty dishes to the sink.",
+            "effort": "medium",
+            "research_suggestions": [],
+            "estimated_duration": 600,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "460bc2de-6e67-4f8c-b16b-ab2fa38bdaf6",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:36"
+          },
+          {
+            "id": "5959f456-8edc-45bb-b0cd-ee98c52f119b",
+            "task_id": "ff57124b-354c-4f71-998d-02800a21cff1",
+            "order": 2,
+            "title": "Load and Run the Dishwasher",
+            "reason": "Emptying the sink and running the dishwasher ensures you have a clean place to wash vegetables and cooking tools as you go.",
+            "instruction": "Load all accumulated dirty dishes, pots, and utensils into the dishwasher, add detergent, and start the cycle.",
+            "effort": "high",
+            "research_suggestions": [],
+            "estimated_duration": 900,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "460bc2de-6e67-4f8c-b16b-ab2fa38bdaf6",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:36"
+          },
+          {
+            "id": "a13b3693-fd78-4f9b-9ace-e5ea641d8934",
+            "task_id": "ff57124b-354c-4f71-998d-02800a21cff1",
+            "order": 3,
+            "title": "Wipe Down Surfaces",
+            "reason": "A clean surface is essential for safe and hygienic food preparation.",
+            "instruction": "Spray all countertops and the stovetop with an all-purpose cleaner and wipe them down thoroughly with a microfiber cloth.",
+            "effort": "medium",
+            "research_suggestions": [
+              "best natural kitchen surface cleaners"
+            ],
+            "estimated_duration": 600,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "460bc2de-6e67-4f8c-b16b-ab2fa38bdaf6",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:36"
+          },
+          {
+            "id": "49a568dd-5e92-4466-85f3-1a054b13e394",
+            "task_id": "ff57124b-354c-4f71-998d-02800a21cff1",
+            "order": 4,
+            "title": "Take Out the Trash",
+            "reason": "Creating empty bins prevents overflow and unpleasant odors while you are cooking dinner.",
+            "instruction": "Empty the main kitchen trash can and recycling bin, tie the bags, and take them outside to the outdoor bins. Put a fresh liner in.",
+            "effort": "low",
+            "research_suggestions": [],
+            "estimated_duration": 300,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "460bc2de-6e67-4f8c-b16b-ab2fa38bdaf6",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:36"
+          },
+          {
+            "id": "01214b9f-f6e7-4cb8-b459-4a9fe1c3bbe1",
+            "task_id": "ff57124b-354c-4f71-998d-02800a21cff1",
+            "order": 5,
+            "title": "Floor Sweep and Final Prep",
+            "reason": "A clean floor completes the kitchen reset, and staging ingredients makes cooking stress-free.",
+            "instruction": "Quickly sweep the kitchen floor to catch any crumbs, and gather all ingredients and tools you will need for your specific dinner recipe.",
+            "effort": "medium",
+            "research_suggestions": [],
+            "estimated_duration": 600,
+            "strategy": "ai_generated",
+            "source": "GEMINI",
+            "generation_id": "460bc2de-6e67-4f8c-b16b-ab2fa38bdaf6",
+            "status": "pending",
+            "version": 1,
+            "completed_at": null,
+            "created_at": "2026-10-25T13:51:36"
+          }
+        ]
+      }
+    }
+  ],
+  "checks": {
+    "distinct_plans": true,
+    "done": 200,
+    "cant": 200,
+    "another": 200,
+    "rest": 200,
+    "dismiss": 200,
+    "adapt_capacity": 200,
+    "logout_login_persistence": true
+  }
+}

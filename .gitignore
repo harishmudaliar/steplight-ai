@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+dist/
+build/
+out/
+apps/desktop/release/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Cache
+.pytest_cache/
+.coverage
+htmlcov/
+.vitest/
+
+# SQLite & Data
+*.db
+*.sqlite3
+*.log
+dev_email_sink.log
+data/
+knowledge_base/
+
+# Environment variables
+.env.local
+.env.*.local
+# Note: Root .env is local-development source; avoid committing secrets
+.env
+
+# Reviewed strategy corpus is source data; generated index artifacts remain ignored.
+!backend/knowledge_base/
+!backend/knowledge_base/strategies.v1.json
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Isolated native test profile
+.desktop-test-profile/

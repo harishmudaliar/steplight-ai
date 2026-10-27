@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #191c1e;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  #root { min-height: 100vh; min-height: 100dvh; }
+
+  .app-shell { min-height: 100vh; min-height: 100dvh; }
+
+  html.dark, html.dark body {
+    background-color: #111726;
+    color: #eff1f4;
+  }
+
+  body {
+    overscroll-behavior-y: contain;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Material Symbols Icon Support */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Keep scroll affordances visible, especially for keyboard and trackpad users. */
+* { scrollbar-width: thin; scrollbar-color: #aeb8ca transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #aeb8ca; border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Accessible Keyboard Focus Rings */
+:focus-visible {
+  outline: 2px solid #5265e8;
+  outline-offset: 2px;
+  border-radius: 0.375rem;
+}
+
+/* Tactile micro-transitions */
+.active-press {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.active-press:active {
+  transform: scale(0.98);
+}
+
+/* Gentle breathing pulse for Rest / Pacing Mode */
+@keyframes breathingPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.animate-breathe {
+  animation: breathingPulse 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

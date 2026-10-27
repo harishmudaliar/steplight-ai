@@ -1,0 +1,63 @@
+{
+  "name": "@steplight/desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Steplight AI Electron Desktop Application",
+  "author": "Team OLYMPUS",
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc && node scripts/launch.cjs",
+    "start": "node scripts/launch.cjs",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "ai.steplight.desktop",
+    "productName": "Steplight AI",
+    "artifactName": "${productName}-Setup-${version}.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../web/dist",
+        "to": "web",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "requestedExecutionLevel": "asInvoker",
+      "signAndEditExecutable": true
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "dotenv": "^16.4.5",
+    "electron": "45.0.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.4.5"
+  }
+}

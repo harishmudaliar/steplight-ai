@@ -1,0 +1,7 @@
+# Reproducible local retrieval stack. The MiniLM model revision is pinned separately in code.
+numpy==2.2.6; python_version < "3.14"
+numpy==2.4.3; python_version >= "3.14"
+faiss-cpu==1.13.2
+sentence-transformers==5.2.3
+torch==2.10.0
+transformers==5.3.0
